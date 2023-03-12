@@ -1,0 +1,25 @@
+server:
+  port: 8080  #Spring cambio de puerto 
+
+logging:
+  level:
+    root: warn
+    '[org.springframework.security.web]': debug  
+
+taco:
+  orders:
+    pageSize: 15
+            
+spring:
+  security:
+    oauth2:
+     client:
+        registration:
+          facebook:
+            clientId: valor #<facebook client id>
+            clientSecret: secret #<facebook client secret>
+            scope: email, public_profile
+  datasource:
+     generate-unique-name: false # Spring to not generate a unique random for the database name . Instead,
+                                 # it should use the value set to the spring.datasource.name property
+     name: tacocloud             # url database is jdbc:h2:mem:tacocloud
